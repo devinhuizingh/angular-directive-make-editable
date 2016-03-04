@@ -3,13 +3,16 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Editable</title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
 	<script src="myApp.js"></script>
 </head>
 <body>
-	<make-editable ng-click="click.makeEditable()">
+	<make-editable ng-class="{'edit': hello}">
   		<p>Content that will become editable when the directive rendered.</p>
-  		<button  >Edit</button>
+  		<button ng-click="click.makeEditable()" ng-hide="hello" 
+  		>Edit</button>
+  		<button ng-click="click.save()" ng-show="hello">Save</button>
 	</make-editable>
 </body>
 </html>

@@ -3,7 +3,7 @@ angular.module('myApp', []).
 		return {
 			restrict: 'E',
 			templateUrl: 'template.html',
-			scope: true,
+			//scope: true,
 			transclude: true,
 			link: function(scope, element, attrs) {
 				//alert("yep")
@@ -12,6 +12,12 @@ angular.module('myApp', []).
 					makeEditable: function() {
 						//alert("working fine");
 						attrs.$set("contenteditable", true);
+						scope.hello=true;
+						
+					},
+					save: function() {
+						attrs.$set("contenteditable", false);
+						scope.hello=false
 					}
 				}
 			}
